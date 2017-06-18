@@ -1,6 +1,4 @@
-FROM alpine:3.4
-
-MAINTAINER xujinkai <jack777@xujinkai.net>
+FROM alpine:3.6
 
 RUN apk update && \
 	apk add --no-cache --update bash && \
@@ -9,7 +7,7 @@ RUN apk update && \
 	mkdir -p /data && \
 	apk add --no-cache --update aria2 && \
 	apk add git && \
-	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
+	git clone https://github.com/ghostry/webui-aria2 /aria2-webui && \
 	apk add --update darkhttpd
 	
 ADD files/start.sh /conf-copy/start.sh
